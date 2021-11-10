@@ -1,3 +1,5 @@
+var text;
+
 $("#generate").click(function(){
 	var lorem = $("#lorem");
 	lorem.html("");
@@ -15,4 +17,19 @@ $("#generate").click(function(){
 	for(var i = 0; i < quantity; i++){
 		lorem.append("<p>"+data[i % (data.length)]+"</p>"); 
 	}
+
+	text = lorem;
+})
+
+$("#copy").click(function() {
+	/* Get the text field */
+	var copyText = text
+  
+
+  
+	 /* Copy the text inside the text field */
+	navigator.clipboard.writeText(copyText.value);
+  
+	/* Alert the copied text */
+	alert("Copied the text: " + copyText.value);
 })
