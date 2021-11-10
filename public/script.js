@@ -26,12 +26,8 @@ $("#generate").click(function(){
 $("#copy").click(function() {
 	/* Get the text field */
 	var copyText = text
-  
-
-  
 	 /* Copy the text inside the text field */
 	navigator.clipboard.writeText(copyText);
-  
 	/* Alert the copied text */
 	alert("Copied the text: " + copyText);
 })
