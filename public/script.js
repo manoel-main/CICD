@@ -1,3 +1,5 @@
+var text = "";
+
 $("#generate").click(function(){
 	var lorem = $("#lorem");
 	lorem.html("");
@@ -13,6 +15,23 @@ $("#generate").click(function(){
 	"Excepteur sint <br> occaecat cupidatat <br> non proident", 
 	"sunt in culpa <br> qui officia deserunt <br> mollit anim id <br> est laborum."];
 	for(var i = 0; i < quantity; i++){
-		lorem.append("<p>"+data[i % (data.length)]+"</p>"); 
+		lorem.append("<p>"+data[i % (data.length)]+"</p>");
 	}
+	for(var i = 0; i < quantity; i++){
+		text += data[i % (data.length)];
+	}
+
+})
+
+$("#copy").click(function() {
+	/* Get the text field */
+	var copyText = text
+  
+
+  
+	 /* Copy the text inside the text field */
+	navigator.clipboard.writeText(copyText);
+  
+	/* Alert the copied text */
+	alert("Copied the text: " + copyText);
 })
